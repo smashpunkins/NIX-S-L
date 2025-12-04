@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIX: Descargas</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .download-card {
+            background: rgba(20, 0, 0, 0.4);
+            border: 1px solid var(--border-dim);
+            padding: 2.5rem;
+            text-align: center;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .download-card:hover {
+            border-color: var(--c-ember);
+            background: rgba(40, 0, 0, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .version-tag {
+            background: #333;
+            color: #ccc;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .file-name {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--c-ember);
+            background: rgba(0,0,0,0.3);
+            padding: 5px;
+            border: 1px dashed #5a1a1a;
+            margin-bottom: 1rem;
+            word-break: break-all;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 2px solid var(--c-ember);
+            color: var(--c-ember);
+            font-family: 'Kanit';
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: 0.3s;
+            margin-top: 2rem;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 150, 66, 0.1);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(255, 150, 66, 0.2);
+        }
+
+        .alpha-warning {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #885555;
+            text-align: center;
+            border-top: 1px solid #331010;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fog-overlay"></div>
+
+    <nav>
+        <div class="menu-header">
+            <h2>NIX // MENU</h2>
+        </div>
+        <div class="nav-stack">
+            <a href="index.html" class="nav-link">01 INICIO</a>
+            <a href="gameplay.html" class="nav-link">02 GAMEPLAY</a>
+            <a href="lore.html" class="nav-link">03 LORE</a>
+            <a href="demo.html" class="nav-link current">04 DEMO</a>
+            <a href="credits.html" class="nav-link">05 CRÉDITOS</a>
+        </div>
+    </nav>
+
+    <main class="fade-in">
+        <h1>Centro de Descarga</h1>
+        <div class="separator"></div>
+        <p>Selecciona el archivo que deseas obtener. La versión actual es una <strong>Alpha Técnica</strong> para pruebas de movimiento y atmósfera.</p>
+        
+        <div class="download-grid">
+            
+            <!-- OPCIÓN 1: EL JUEGO (Playable ZIP) -->
+            <div class="download-card">
+                <div>
+                    <span class="card-icon">🎮</span>
+                    <h2 style="color: var(--text-white); margin-bottom: 5px;">Alpha Build</h2>
+                    <span class="version-tag">v2.2</span>
+                    
+                    <div class="file-name">Nix-Shadows-and-light-playable-v2.2</div>
+                    
+                    <p style="font-size: 0.95rem; color: #aaa;">
+                        Versión compilada lista para jugar.<br>
+                        Nivel principal: <strong>"The Fissure"</strong>.
+                    </p>
+                </div>
+                
+                <!-- Link a la Release específica -->
+                <a href="https://github.com/smashpunkins/Nix-Shadows-and-light-playable/releases/tag/v2.2" target="_blank" class="btn-action" style="font-size: 1.1rem; padding: 15px 40px; margin-top: 2rem;">
+                    DESCARGAR JUEGO
+                </a>
+            </div>
+
+            <!-- OPCIÓN 2: REPOSITORIO (Main Repo) -->
+            <div class="download-card">
+                <div>
+                    <span class="card-icon">💻</span>
+                    <h2 style="color: var(--text-white); margin-bottom: 5px;">Source Code</h2>
+                    <span class="version-tag">Proyecto Completo</span>
+                    
+                    <div class="file-name">Nix-Shadows-and-light-pr</div>
+
+                    <p style="font-size: 0.95rem; color: #aaa;">
+                        Acceso al historial de commits, assets y desarrollo en tiempo real.
+                    </p>
+                </div>
+
+                <!-- Link al Repositorio Principal -->
+                <a href="https://github.com/smashpunkins/Nix-Shadows-and-light-pr" target="_blank" class="btn-secondary">
+                    REPOSITORIO
+                </a>
+            </div>
+
+        </div>
+
+        <div class="alpha-warning">
+            ⚠️ <strong>Nota:</strong> Este software está en desarrollo (Alpha v2.2). Puede contener errores visuales o cierres inesperados.
+        </div>
+
+    </main>
+</body>
+</html>

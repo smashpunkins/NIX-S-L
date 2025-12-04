@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIX: Créditos</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* --- ESTILOS EQUIPO --- */
+        .solo-dev-container {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: rgba(20, 0, 0, 0.4);
+            border: 1px solid var(--border-dim);
+            padding: 3rem;
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .role-item {
+            margin-bottom: 10px;
+        }
+
+        .role-item h3 {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .role-item p {
+            font-size: 1.2rem;
+            color: var(--c-ember);
+            font-weight: bold;
+            margin: 0;
+            font-family: 'Kanit';
+        }
+
+        /* --- FICHA TÉCNICA --- */
+        .tech-summary {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--c-ember);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .tech-item strong { color: #fff; display: block; margin-bottom: 5px; }
+        .tech-item p { font-size: 0.95rem; color: #aaa; margin: 0; }
+
+        /* --- DOCUMENTACIÓN --- */
+        .docs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .doc-link {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-left: 4px solid #555;
+            transition: 0.3s;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        .doc-link:hover {
+            background: rgba(255, 150, 66, 0.1);
+            border-left-color: var(--c-ember);
+            transform: translateX(5px);
+        }
+
+        .doc-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: var(--text-dim);
+        }
+
+        .doc-info strong {
+            display: block;
+            color: var(--text-white);
+            font-family: 'Kanit';
+            font-size: 1.1rem;
+        }
+
+        .doc-info span {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* --- BITÁCORA --- */
+        .changelog-box {
+            background: #0a0505;
+            border: 1px solid #333;
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+            font-size: 0.95rem;
+            color: #ccc;
+            font-family: sans-serif;
+        }
+
+        .changelog-box::-webkit-scrollbar { width: 6px; }
+        .changelog-box::-webkit-scrollbar-thumb { background: var(--c-ember); border-radius: 3px; }
+
+        .changelog-box h3 { color: var(--c-ember); font-size: 1.1rem; margin-top: 20px; margin-bottom: 10px; }
+        .changelog-box h4 { color: #ff4d4d; font-size: 1rem; margin-top: 15px; margin-bottom: 5px; }
+        .changelog-box ul { padding-left: 20px; margin-bottom: 15px; }
+        .changelog-box li { margin-bottom: 5px; color: #aaa; }
+
+        @media (max-width: 900px) {
+            .tech-grid, .docs-container { grid-template-columns: 1fr; }
+            .changelog-box { height: auto; max-height: 500px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fog-overlay"></div>
+
+    <nav>
+        <div class="menu-header">
+            <h2>NIX // MENU</h2>
+        </div>
+        <div class="nav-stack">
+            <a href="index.html" class="nav-link">01 INICIO</a>
+            <a href="gameplay.html" class="nav-link">02 GAMEPLAY</a>
+            <a href="lore.html" class="nav-link">03 LORE</a>
+            <a href="demo.html" class="nav-link">04 DEMO</a>
+            <a href="credits.html" class="nav-link current">05 CRÉDITOS</a>
+        </div>
+    </nav>
+
+    <main class="fade-in">
+        <h1>Créditos</h1>
+        <div class="separator"></div>
+
+        <!-- EL EJÉRCITO DE UN SOLO HOMBRE -->
+        <div class="solo-dev-container">
+            
+            <div class="role-grid">
+                
+                <div class="role-item">
+                    <h3>Director del Proyecto</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+                <div class="role-item">
+                    <h3>Programador Principal</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+                
+                <!-- BROMA 1 -->
+                <div class="role-item">
+                    <h3>Vicepresidente Jr.</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+
+                <div class="role-item">
+                    <h3>Director de Arte</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+                <div class="role-item">
+                    <h3>Diseñador de Juego</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+                <div class="role-item">
+                    <h3>Artista de VFX</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+
+                <!-- BROMA 2 -->
+                <div class="role-item">
+                    <h3>Soporte Moral</h3>
+                    <p>Café y Pizza</p>
+                </div>
+
+                <div class="role-item">
+                    <h3>Diseñador de Niveles</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+                <div class="role-item">
+                    <h3>Ingeniero de Sonido</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+                <div class="role-item">
+                    <h3>Guion y Narrativa</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+                <div class="role-item">
+                    <h3>Diseño UX/UI</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+                <div class="role-item">
+                    <h3>Control de Calidad</h3>
+                    <p>Nicolas Supelano</p>
+                </div>
+
+            </div>
+        </div>
+
+        <h1>Documentación Técnica</h1>
+        <div class="separator"></div>
+
+        <!-- RESUMEN DEL GDD -->
+        <div class="tech-summary">
+            <h3 style="color: var(--text-white); margin-bottom: 10px;">Ficha Técnica del Proyecto</h3>
+            <p style="color: #ccc;">
+                NIX es un <em>Action-Platformer 2D</em> desarrollado en <strong>Unity</strong>. El diseño prioriza la precisión del control y la atmósfera ambiental.
+            </p>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <strong>🔧 Ingeniería (Game Feel)</strong>
+                    <p>Implementación de técnicas estándar de industria como <em>Coyote Time</em> y <em>Jump Buffering</em> para garantizar controles responsivos y justos.</p>
+                </div>
+                <div class="tech-item">
+                    <strong>🎨 Dirección de Arte</strong>
+                    <p>Pixel Art minimalista de alto contraste. Uso de iluminación dinámica como mecánica de juego (Luz = Peligro / Sombra = Seguridad).</p>
+                </div>
+                <div class="tech-item">
+                    <strong>🎮 Influencias</strong>
+                    <p>La precisión de movimiento de <em>Celeste</em> combinada con la atmósfera opresiva de <em>Hollow Knight</em>.</p>
+                </div>
+                <div class="tech-item">
+                    <strong>🎯 Alcance (Vertical Slice)</strong>
+                    <p>Experiencia condensada de <strong>~5 minutos</strong> que demuestra el ciclo completo: Exploración, Plataformeo y Narrativa Ambiental.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="docs-container">
+            
+            <!-- COLUMNA IZQUIERDA: ENLACES -->
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--text-white);">Archivos Oficiales</h3>
+                
+                <!-- PROPUESTA -->
+                <a href="https://drive.google.com/file/d/1Kms7_VAJwIqeSG8Dka5dWDt6HLg-uDp_/view?usp=drive_link" target="_blank" class="doc-link">
+                    <span class="doc-icon">📄</span>
+                    <div class="doc-info">
+                        <strong>Propuesta del Juego (GDD)</strong>
+                        <span>PDF - Documento de Diseño Fase 2</span>
+                    </div>
+                </a>
+
+                <!-- USABILIDAD -->
+                <a href="https://drive.google.com/file/d/1dl9xNZhkf6VziHa8NU4XSuUeBgvDWTi8/view?usp=drive_link" target="_blank" class="doc-link">
+                    <span class="doc-icon">📊</span>
+                    <div class="doc-info">
+                        <strong>Informe de Usabilidad</strong>
+                        <span>PDF - Protocolo de Test y Resultados</span>
+                    </div>
+                </a>
+                
+                <p style="font-size: 0.9rem; color: #666; margin-top: 1rem; padding: 10px;">
+                    * Documentación académica alojada en Google Drive.
+                </p>
+            </div>
+
+            <!-- COLUMNA DERECHA: BITÁCORA -->
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--text-white);">Bitácora de Cambios</h3>
+                
+                <div class="changelog-box">
+                    <strong style="color: #fff; display:block; margin-bottom:10px;">Versión 1.3 – Post-Feedback de Usabilidad</strong>
+                    
+                    <h3>1. Validación de Diseño y Cambios</h3>
+                    <p>Detalle de soluciones técnicas y de diseño implementadas:</p>
+
+                    <h4>A. Accesibilidad y Controles</h4>
+                    <ul>
+                        <li><strong>Input System:</strong> Reconfigurado. Flechas para movimiento y teclas (E, F) + L-Shift para acciones.</li>
+                        <li><strong>Justificación:</strong> Separa la mano de navegación de la de acción, mejorando la ergonomía.</li>
+                    </ul>
+
+                    <h4>B. Usabilidad y Diseño de Nivel</h4>
+                    <ul>
+                        <li><strong>División:</strong> El Nivel 1 se separó en dos fases (movilidad vs. peligros) para suavizar la curva de aprendizaje.</li>
+                        <li><strong>Conectividad:</strong> Túneles definidos y escenas de transición para expandir el lore sin interrumpir gameplay.</li>
+                        <li><strong>Dificultad:</strong> Ajuste en distancias de salto y velocidad de rayos de luz.</li>
+                    </ul>
+
+                    <h4>C. Mecánicas y "Game Feel"</h4>
+                    <ul>
+                        <li><strong>Dash:</strong> Velocidad aumentada, cooldown reducido a 0.6s e invulnerabilidad total añadida.</li>
+                        <li><strong>Claridad:</strong> Tutoriales integrados para enseñar el "Triple Salto".</li>
+                    </ul>
+
+                    <h4>D. Estética, Audio y Narrativa</h4>
+                    <ul>
+                        <li><strong>Narrativa:</strong> Voz en Off en cinemáticas para desvelar la historia progresivamente.</li>
+                        <li><strong>Visuales:</strong> Tilemaps finales, fondos y objetos interactivos (llaves/cofres).</li>
+                        <li><strong>Feedback:</strong> Nuevas señales visuales al deslizarse por paredes y partículas VFX.</li>
+                        <li><strong>Audio:</strong> SFX funcionales para correr, saltar y dash.</li>
+                    </ul>
+
+                    <h4>E. Correcciones (Bugs)</h4>
+                    <ul>
+                        <li>Solucionado el freeze crítico al morir en gravedad invertida.</li>
+                        <li>1 segundo de invencibilidad tras recibir daño.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+</html>

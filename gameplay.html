@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIX: Gameplay</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* --- MECHANICS CARDS --- */
+        .mech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .mech-card {
+            background: rgba(20, 0, 0, 0.4);
+            border: 1px solid var(--border-dim);
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .mech-card:hover {
+            border-color: var(--c-ember);
+            transform: translateY(-5px);
+            background: rgba(40, 0, 0, 0.5);
+        }
+
+        .mech-title {
+            color: var(--c-ember);
+            font-family: 'Kanit', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255, 150, 66, 0.2);
+            padding-bottom: 5px;
+        }
+
+        /* --- HAZARD BOX --- */
+        .hazard-box {
+            border-left: 4px solid #ff4d4d;
+            background: linear-gradient(90deg, rgba(61, 0, 0, 0.3) 0%, transparent 100%);
+            padding: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .hazard-title {
+            color: #ff4d4d; 
+            font-weight: bold; 
+            font-size: 1.2rem; 
+            margin-bottom: 5px;
+            font-family: 'Kanit';
+            text-transform: uppercase;
+        }
+
+        /* --- ROADMAP / COMING SOON BOX --- */
+        .roadmap-box {
+            border: 1px dashed var(--c-ember);
+            background: rgba(255, 150, 66, 0.05);
+            padding: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+        
+        .roadmap-badge {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--bg-dark);
+            border: 1px solid var(--c-ember);
+            color: var(--c-ember);
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fog-overlay"></div>
+
+    <nav>
+        <div class="menu-header">
+            <h2>NIX // MENU</h2>
+        </div>
+        <div class="nav-stack">
+            <a href="index.html" class="nav-link">01 INICIO</a>
+            <a href="gameplay.html" class="nav-link current">02 GAMEPLAY</a>
+            <a href="lore.html" class="nav-link">03 LORE</a>
+            <a href="demo.html" class="nav-link">04 DEMO</a>
+            <a href="credits.html" class="nav-link">05 CRÉDITOS</a>
+        </div>
+    </nav>
+
+    <main class="fade-in">
+        <h1>Sistema de Juego</h1>
+        <div class="separator"></div>
+        
+        <p>
+            NIX es un juego de plataformas de precisión y velocidad. 
+            Actualmente, tu supervivencia depende de tu dominio del movimiento, 
+            obligándote a esquivar peligros y encontrar la ruta óptima en segundos.
+        </p>
+        
+        <!-- GIF PRINCIPAL (SHOWCASING MOVEMENT) -->
+        <div class="img-placeholder" style="height: 300px;">
+            [ GIF: MOVIMIENTO FLUIDO Y DASH ]
+        </div>
+
+        <!-- MOVILIDAD (MOVEMENT) -->
+        <h2 style="margin-top: 3rem;">Movilidad Avanzada</h2>
+        <div class="mech-grid">
+            
+            <!-- Card 1: Jumps -->
+            <div class="mech-card">
+                <div class="mech-title">Salto Aéreo</div>
+                <p>Domina la verticalidad. Realiza <strong>Doble y Triple Salto</strong> para alcanzar plataformas distantes y corregir tu trayectoria en el aire.</p>
+            </div>
+
+            <!-- Card 2: Walls -->
+            <div class="mech-card">
+                <div class="mech-title">Parkour</div>
+                <p>Las paredes no son obstáculos. Puedes <strong>deslizarte</strong> (Wall Slide) para bajar con control o <strong>escalar</strong> (Wall Climb) para alcanzar nuevas alturas.</p>
+            </div>
+
+            <!-- Card 3: Dash -->
+            <div class="mech-card">
+                <div class="mech-title">Dash Espectral</div>
+                <p>Impulso instantáneo. El Dash te mueve a gran velocidad y te otorga <strong>invulnerabilidad temporal</strong> para atravesar peligros.</p>
+            </div>
+        </div>
+
+        <!-- OBJETIVOS Y PELIGROS -->
+        <h2>El Entorno Hostil</h2>
+        <div class="separator"></div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            
+            <!-- Column 1: Objectives -->
+            <div>
+                <p>Tu objetivo en cada nivel es sobrevivir y alcanzar la salida.</p>
+                <ul style="margin-left: 20px; margin-bottom: 2rem;">
+                    <li style="color: var(--text-white); margin-bottom: 10px;">
+                        <span style="color: var(--c-ember);">◈</span> <strong>Llaves y Cofres:</strong> Explora rincones ocultos para encontrar llaves que abren el camino final.
+                    </li>
+                    <li style="color: var(--text-white);">
+                        <span style="color: var(--c-ember);">◈</span> <strong>Evasión:</strong> Utiliza tu velocidad para dejar atrás a las sombras que te persiguen.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Hazards (Gravity/Light) -->
+            <div>
+                <!-- Hazard 1 -->
+                <div class="hazard-box">
+                    <div class="hazard-title">⚠️ Rayos de Luz Letal</div>
+                    <p style="font-size: 1rem; margin:0;">
+                        Rayos móviles de energía concentrada. Debes leer sus patrones y moverte rápido; el contacto es fatal.
+                    </p>
+                </div>
+                
+                <!-- Hazard 2 -->
+                <div class="hazard-box" style="border-color: #a64eff;">
+                    <div class="hazard-title" style="color: #a64eff;">🌀 Gravedad Invertida</div>
+                    <p style="font-size: 1rem; margin:0;">
+                        Zonas que alteran la física, forzándote a caminar por el techo y adaptar tus controles al instante.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROADMAP / COMBAT SECTION -->
+        <div class="roadmap-box">
+            <div class="roadmap-badge">PRÓXIMAMENTE</div>
+            <h3 style="color: var(--text-white); margin-bottom: 10px;">⚔️ Sistema de Combate</h3>
+            <p>
+                La implementación del combate está en desarrollo activo. 
+                El sistema está siendo diseñado para <strong>fluir con el movimiento</strong>, permitiéndote atacar sin detener tu carrera. 
+                Utilizarás la luz de Nix como arma ofensiva para disipar las sombras mientras mantienes el impulso.
+            </p>
+        </div>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIX: Lore</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Bloque de texto central */
+        .lore-main {
+            border-left: 4px solid var(--c-ember);
+            background: rgba(20, 0, 0, 0.4);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .lore-text {
+            font-size: 1.25rem;
+            color: var(--text-white);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .lore-highlight {
+            color: var(--c-ember);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        /* Sección de Destino (Footer) */
+        .fate-box {
+            border-top: 1px solid var(--border-dim);
+            padding-top: 3rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fog-overlay"></div>
+
+    <nav>
+        <div class="menu-header">
+            <h2>NIX // MENU</h2>
+        </div>
+        <div class="nav-stack">
+            <a href="index.html" class="nav-link">01 INICIO</a>
+            <a href="gameplay.html" class="nav-link">02 GAMEPLAY</a>
+            <a href="lore.html" class="nav-link current">03 LORE</a>
+            <a href="demo.html" class="nav-link">04 DEMO</a>
+            <a href="credits.html" class="nav-link">05 CRÉDITOS</a>
+        </div>
+    </nav>
+
+    <main class="fade-in">
+        
+        <!-- VIDEO LOOP -->
+        <div class="img-placeholder" style="height: 400px; background: #000; margin-bottom: 3rem; border: 1px solid #333;">
+            <video autoplay muted loop controls playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                <source src="cinematic_intro.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <h1>Historia</h1>
+        <div class="separator"></div>
+
+        <!-- HISTORIA -->
+        <div class="lore-main">
+            <p class="lore-text">
+                <span class="lore-highlight">Nix es una sombra nacida de la oscuridad absoluta.</span><br> 
+                Su naturaleza es opuesta a la iluminación; la luz lo quema, lo debilita y es su enemigo natural.
+            </p>
+            <p class="lore-text">
+                Sin embargo, su hogar se está desmoronando hacia la nada. Para evitar la destrucción total de su mundo, Nix descubre una verdad cruel: 
+                <strong style="color: #fff;">debe buscar la Luz para salvarlo.</strong>
+            </p>
+            <p class="lore-text" style="margin-bottom: 0;">
+                Ahora, obligado a huir de las profundidades de "La Grieta", Nix emprende un viaje suicida hacia la superficie. 
+                Debe abrazar aquello que le hiere para proteger aquello que ama.
+            </p>
+        </div>
+
+        <!-- TEASER -->
+        <div class="fate-box">
+            <h2 style="font-size: 1.5rem; color: var(--text-dim); margin-bottom: 1rem;">El Destino</h2>
+            <p style="max-width: 700px; margin: 0 auto; color: #888; font-size: 1.1rem; font-style: italic;">
+                "¿Puede una sombra portar la luz sin desvanecerse?"
+            </p>
+        </div>
+
+    </main>
+</body>
+</html>

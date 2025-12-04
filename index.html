@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIX: Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* --- VIDEO HERO STYLES --- */
+        .hero-video-container {
+            width: 100%;
+            height: 450px; 
+            background: #000;
+            border-bottom: 2px solid var(--border-dim);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ambient-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            opacity: 0.9;
+            pointer-events: none; 
+        }
+
+        /* --- SPLIT LAYOUT --- */
+        .intro-split {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr; 
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        /* Estilo específico para la caja del logo si no hay imagen aun */
+        .logo-box-placeholder {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+            border: 2px dashed var(--c-ember); /* Borde discontinuo naranja */
+            background: rgba(20, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--c-ember);
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 150, 66, 0.1);
+        }
+
+        /* --- SQUARE GALLERY GRID (1:1) --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px; 
+            width: 100%;
+        }
+
+        .gallery-item {
+            width: 100%;
+            aspect-ratio: 1 / 1; 
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-dim);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+        /* Hover Effects */
+        .gallery-item:hover {
+            border-color: var(--c-ember);
+            box-shadow: 0 0 20px rgba(255, 150, 66, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .gallery-item:hover img {
+            opacity: 1;
+            transform: scale(1.1); 
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 900px) {
+            .hero-video-container { height: 250px; }
+            .intro-split { grid-template-columns: 1fr; text-align: center; }
+            .logo-box-placeholder { margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fog-overlay"></div>
+
+    <nav>
+        <div class="menu-header">
+            <h2>NIX // MENU</h2>
+        </div>
+        <div class="nav-stack">
+            <a href="index.html" class="nav-link current">01 INICIO</a>
+            <a href="gameplay.html" class="nav-link">02 GAMEPLAY</a>
+            <a href="lore.html" class="nav-link">03 LORE</a>
+            <a href="demo.html" class="nav-link">04 DEMO</a>
+            <a href="credits.html" class="nav-link">05 CRÉDITOS</a>
+        </div>
+    </nav>
+
+    <main class="fade-in">
+        
+        <!-- 1. SEAMLESS VIDEO LOOP -->
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="ambient-video">
+                <source src="trailer.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- 2. DESCRIPTION & LOGO -->
+        <div class="intro-split">
+            
+            <!-- Left: Text -->
+            <div class="text-content">
+                <h1>NIX:</h1>
+                <h1 style="font-size: 2.5rem; margin-top: -10px; color: var(--text-dim);">Shadows & Light</h1>
+                <div class="separator"></div>
+
+                <p style="color: var(--c-ember); font-size: 1.4rem; font-weight: bold;">
+                    "Donde la luz termina, el viaje comienza."
+                </p>
+                <p>
+                    <strong>Nacido de la sombra profunda</strong>, Nix no es un héroe de luz, sino una criatura de oscuridad obligada a huir de un mundo que colapsa.
+                </p>
+                <p>
+                    En este <em>Action-Platformer</em> atmosférico, la Luz es tu única salvación pero también tu mayor amenaza. 
+                    Deberás dominar el movimiento preciso para escapar de 'La Grieta' y abrazar aquello que te quema para sobrevivir.
+                </p>
+            </div>
+
+            <!-- Right: Logo Placeholder -->
+            <div>
+                <!-- 
+                   CUANDO TENGAS EL LOGO:
+                   Borra este <div> y pon: <img src="logo.png" style="width:100%;"> 
+                -->
+                <div class="logo-box-placeholder">
+                    Logo<br>
+                    (PNG)
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 3. SQUARE IMAGE GALLERY -->
+        <h2>Galería</h2>
+        <div class="separator" style="width: 50px;"></div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://placehold.co/500x500/1a0520/ff9642?text=La+Grieta" alt="Screenshot 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://placehold.co/500x500/3d0000/fff?text=Peligros" alt="Screenshot 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://placehold.co/500x500/050000/ff4d4d?text=Parkour" alt="Screenshot 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://placehold.co/500x500/222/888?text=Atmósfera" alt="Screenshot 4">
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
