@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
+        /* --- ESTILOS ESPECÍFICOS DE ESTA PÁGINA --- */
+        
+        /* Estilo para el Video de Gameplay */
+        .gameplay-showcase {
+            width: 100%;
+            height: auto;
+            max-height: 450px; /* Altura máxima para que no ocupe toda la pantalla */
+            object-fit: cover; /* Ajusta el video sin deformarlo */
+            border: 1px solid var(--c-ember);
+            box-shadow: 0 0 20px rgba(255, 150, 66, 0.15);
+            display: block;
+            background: #000; /* Fondo negro mientras carga */
+        }
+
         /* --- MECHANICS CARDS --- */
         .mech-grid {
             display: grid;
@@ -68,7 +82,7 @@
             position: absolute;
             top: -15px;
             left: 20px;
-            background: var(--bg-dark);
+            background: var(--bg-dark); /* Asegúrate de tener esta variable en style.css o cámbialo por #0a0a0a */
             border: 1px solid var(--c-ember);
             color: var(--c-ember);
             padding: 5px 15px;
@@ -85,6 +99,7 @@
 
     <nav>
         <div class="menu-header">
+            <img src="logo_nix.png" alt="Nix Logo" class="logo-nix">
             <h2>NIX // MENU</h2>
         </div>
         <div class="nav-stack">
@@ -106,9 +121,13 @@
             obligándote a esquivar peligros y encontrar la ruta óptima en segundos.
         </p>
         
-        <!-- GIF PRINCIPAL (SHOWCASING MOVEMENT) -->
-        <div class="img-placeholder" style="height: 300px;">
-            [ GIF: MOVIMIENTO FLUIDO Y DASH ]
+        <!-- VIDEO LOOP (Reemplaza al GIF) -->
+        <div style="margin: 2rem 0;">
+            <video class="gameplay-showcase" autoplay loop muted playsinline>
+                <!-- Asegúrate de que el archivo se llame así en tu carpeta -->
+                <source src="nix-gameplay.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video HTML5.
+            </video>
         </div>
 
         <!-- MOVILIDAD (MOVEMENT) -->

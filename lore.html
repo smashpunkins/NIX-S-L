@@ -7,7 +7,22 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* Bloque de texto central */
+        /* --- ESTILOS GENERALES --- */
+        
+        /* Video Cinemático */
+        .lore-cinematic {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            border: 1px solid var(--c-ember);
+            box-shadow: 0 0 20px rgba(255, 150, 66, 0.15);
+            display: block;
+            margin-bottom: 3rem;
+            background: #000;
+        }
+
+        /* --- SECCIÓN HISTORIA (Perfil + Texto) --- */
         .lore-main {
             border-left: 4px solid var(--c-ember);
             background: rgba(20, 0, 0, 0.4);
@@ -15,24 +30,159 @@
             margin-bottom: 3rem;
         }
 
+        .lore-layout {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        /* La imagen (Logo usado como perfil) */
+        .character-portrait {
+            width: 180px;  
+            height: 180px; 
+            object-fit: contain; 
+            border: 1px solid var(--border-dim);
+            background: rgba(0,0,0,0.3);
+            flex-shrink: 0;
+            padding: 10px;
+        }
+
+        .lore-text-content {
+            flex: 1;
+        }
+
         .lore-text {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--text-white);
-            line-height: 1.8;
-            margin-bottom: 2rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
         .lore-highlight {
             color: var(--c-ember);
             font-weight: bold;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
 
-        /* Sección de Destino (Footer) */
+        /* --- GALERÍA DE PERSONAJES --- */
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 3rem;
+        }
+
+        .char-card {
+            background: rgba(20, 0, 0, 0.4);
+            border: 1px solid var(--border-dim);
+            transition: 0.3s;
+            overflow: hidden; 
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .char-card:hover {
+            border-color: var(--c-ember);
+            transform: translateY(-5px);
+        }
+
+        /* Contenedor de la imagen */
+        .char-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            flex-shrink: 0;
+        }
+
+        .char-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-dim);
+            background: #111;
+        }
+
+        /* Info del personaje */
+        .char-info {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .char-name {
+            color: var(--c-ember);
+            font-family: 'Kanit', sans-serif;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .char-role {
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Estilo para la descripción */
+        .char-desc {
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.5;
+            border-top: 1px solid rgba(255, 150, 66, 0.2);
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        /* --- OVERLAY (Proximamente) --- */
+        .coming-soon-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 5, 5, 0.85); /* Fondo oscuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .cs-badge {
+            border: 2px dashed var(--c-ember);
+            color: var(--c-ember);
+            padding: 10px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: rotate(-10deg);
+            font-size: 1rem;
+            background: rgba(0,0,0,0.8);
+        }
+
+        /* Footer */
         .fate-box {
             border-top: 1px solid var(--border-dim);
             padding-top: 3rem;
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .lore-layout {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .lore-main {
+                border-left: none;
+                border-top: 4px solid var(--c-ember);
+            }
         }
     </style>
 </head>
@@ -43,6 +193,7 @@
     <nav>
         <div class="menu-header">
             <h2>NIX // MENU</h2>
+            <img src="logo_nix.png" alt="Nix Logo" class="logo-nix">
         </div>
         <div class="nav-stack">
             <a href="index.html" class="nav-link">01 INICIO</a>
@@ -56,32 +207,90 @@
     <main class="fade-in">
         
         <!-- VIDEO LOOP -->
-        <div class="img-placeholder" style="height: 400px; background: #000; margin-bottom: 3rem; border: 1px solid #333;">
-            <video autoplay muted loop controls playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-                <source src="cinematic_intro.mp4" type="video/mp4">
-            </video>
-        </div>
+        <video class="lore-cinematic" autoplay muted loop playsinline>
+            <source src="cinematic_intro.mp4" type="video/mp4">
+        </video>
 
         <h1>Historia</h1>
         <div class="separator"></div>
 
-        <!-- HISTORIA -->
+        <!-- HISTORIA CON LOGO -->
         <div class="lore-main">
-            <p class="lore-text">
-                <span class="lore-highlight">Nix es una sombra nacida de la oscuridad absoluta.</span><br> 
-                Su naturaleza es opuesta a la iluminación; la luz lo quema, lo debilita y es su enemigo natural.
-            </p>
-            <p class="lore-text">
-                Sin embargo, su hogar se está desmoronando hacia la nada. Para evitar la destrucción total de su mundo, Nix descubre una verdad cruel: 
-                <strong style="color: #fff;">debe buscar la Luz para salvarlo.</strong>
-            </p>
-            <p class="lore-text" style="margin-bottom: 0;">
-                Ahora, obligado a huir de las profundidades de "La Grieta", Nix emprende un viaje suicida hacia la superficie. 
-                Debe abrazar aquello que le hiere para proteger aquello que ama.
-            </p>
+            <div class="lore-layout">
+                
+                <!-- FOTO DE PERFIL: LOGO -->
+                <img src="logo.png" alt="Nix Profile" class="character-portrait">
+
+                <div class="lore-text-content">
+                    <p class="lore-text">
+                        <span class="lore-highlight">Nix es una sombra nacida de la oscuridad absoluta.</span><br> 
+                        Su naturaleza es opuesta a la iluminación; la luz lo quema, lo debilita y es su enemigo natural.
+                    </p>
+                    <p class="lore-text">
+                        Sin embargo, su hogar se está desmoronando hacia la nada. Para evitar la destrucción total de su mundo, Nix descubre una verdad cruel: 
+                        <strong style="color: #fff;">debe buscar la Luz para salvarlo.</strong>
+                    </p>
+                    <p class="lore-text" style="margin-bottom: 0;">
+                        Ahora, obligado a huir de las profundidades de "La Grieta", Nix emprende un viaje suicida hacia la superficie.
+                    </p>
+                </div>
+
+            </div>
         </div>
 
-        <!-- TEASER -->
+        <!-- GALERÍA DE PERSONAJES -->
+        <h2>Entidades del Abismo</h2>
+        <div class="separator"></div>
+
+        <div class="char-grid">
+            
+            <!-- Personaje 1: NIX -->
+            <div class="char-card">
+                <div class="char-img-wrapper">
+                    <img src="char_nix.png" alt="Nix" class="char-img">
+                </div>
+                <div class="char-info">
+                    <div class="char-name">Nix</div>
+                    <div class="char-role">El Protagonista</div>
+                    <p class="char-desc">
+                        Una anomalía viviente capaz de alterar su densidad para realizar maniobras aéreas imposibles. Aunque su cuerpo está hecho de pura oscuridad, porta la carga de buscar la luz que podría matarlo.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Personaje 2: ACECHADOR -->
+            <div class="char-card">
+                <div class="char-img-wrapper">
+                    <img src="char_shadow.png" alt="Sombra" class="char-img">
+                </div>
+                <div class="char-info">
+                    <div class="char-name">Acechador</div>
+                    <div class="char-role">Sombra Corrupta</div>
+                    <p class="char-desc">
+                        Sombras que sucumbieron a la locura del vacío. Carentes de consciencia, vagan eternamente por los pasillos de la Grieta, atacando violentamente a cualquier intruso que perturbe su silencio.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Personaje 3: EL MENTOR (Oculto) -->
+            <div class="char-card">
+                <div class="char-img-wrapper">
+                    <img src="char_mentor.png" alt="El Mentor" class="char-img">
+                    <div class="coming-soon-overlay">
+                        <div class="cs-badge">Próximamente</div>
+                    </div>
+                </div>
+                <div class="char-info">
+                    <div class="char-name">El Mentor</div>
+                    <div class="char-role">Guía Ancestral</div>
+                    <p class="char-desc">
+                        Una figura antigua que ha sobrevivido milenios en la penumbra. Posee el conocimiento prohibido sobre cómo manipular la luz sin desintegrarse, y espera en la cima para juzgar tu valía.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
         <div class="fate-box">
             <h2 style="font-size: 1.5rem; color: var(--text-dim); margin-bottom: 1rem;">El Destino</h2>
             <p style="max-width: 700px; margin: 0 auto; color: #888; font-size: 1.1rem; font-style: italic;">
